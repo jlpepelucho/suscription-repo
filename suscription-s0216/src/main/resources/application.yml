@@ -1,0 +1,13 @@
+spring:
+  application:
+    name:  suscription-s0216
+  profiles:
+    active: ${PROFILE:dev}
+  config:
+    import: "optional:configserver:http://${CONFIG_SERVER:localhost:9991}"
+
+info:
+  project:
+    version: "@project.version@"
+    title: "@project.name@"
+    description: "@project.description@"
