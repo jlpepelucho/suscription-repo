@@ -1,7 +1,7 @@
 package ec.com.zurich.suscription.resources.mapper;
 
-import ec.com.zurich.suscription.resources.model.DemoResponse;
 import ec.com.zurich.suscription.resources.entity.VariablesSistema;
+import ec.com.zurich.suscription.resources.model.DemoResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;

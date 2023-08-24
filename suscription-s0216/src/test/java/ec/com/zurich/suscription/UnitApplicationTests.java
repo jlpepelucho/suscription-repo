@@ -1,7 +1,6 @@
 package ec.com.zurich.suscription;
 
 import ec.com.zurich.suscription.repository.DemoDbRepository;
-import ec.com.zurich.suscription.resources.entity.VariablesSistema;
 import ec.com.zurich.suscription.resources.model.DemoRequest;
 import ec.com.zurich.suscription.service.impl.DemoDbServiceImpl;
 import ec.com.zurich.suscription.service.impl.DemoRestServiceImpl;
