@@ -1,10 +1,8 @@
 package ec.com.zurich.suscription.resources.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 @Data
 @Entity
@@ -13,6 +11,8 @@ public class TipoDocAutorizacionSRI {
 
     @Id
     @Column(name = "ID", length = 16, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEC_GEN")
+    @GenericGenerator(name = "SEC_GEN", strategy = "ec.com.zurich.suscription.util.CustomSequenceGenerator", parameters = @org.hibernate.annotations.Parameter(name = "sequence_name", value = "GENERADORID"))
     private String id;
 
     @Column(name = "DOCUMENTO", length = 15)

@@ -1,6 +1,7 @@
 package ec.com.zurich.suscription.resources.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -104,6 +105,10 @@ public class Entidad {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TIPOENTIDADID", insertable = false, updatable = false)
     private TipoEntidad tipoEntidadEntity;
+
+    @NotNull
+    @Column(name = "TIPOID", nullable = false)
+    private String tipoid;
 
     @PrePersist
     public void prePersist() {

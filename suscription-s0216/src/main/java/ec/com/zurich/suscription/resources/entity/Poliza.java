@@ -1,10 +1,12 @@
 package ec.com.zurich.suscription.resources.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Data
@@ -107,7 +109,7 @@ public class Poliza {
     private String configProductoId;
 
     @Column(name = "SINAUTORIZACIONPAGOS", length = 1, nullable = false)
-    private String sinAutorizacionPagos;
+    private Boolean sinAutorizacionPagos;
 
     @Column(name = "UNIDADPRODUCCIONID", length = 16)
     private String unidadProduccionId;
@@ -137,10 +139,14 @@ public class Poliza {
     private Boolean anioSuscripcion2006;
 
     @Column(name = "ESANIODORADO", length = 1)
-    private String esAnioDorado;
+    private Boolean esAnioDorado;
 
     @Column(name = "TASAMINIMA", precision = 19, scale = 4)
     private BigDecimal tasaMinima;
+
+
+    @Column(name = "PRIMAMINIMA", precision = 19, scale = 4)
+    private BigDecimal primaMinima;
 
     @Column(name = "FECHACADUCIDADCERTIFICADOS")
     private LocalDateTime fechaCaducidadCertificados;
@@ -177,6 +183,106 @@ public class Poliza {
 
     @Column(name = "TIENEDERECHOS")
     private Boolean tieneDerechos;
+    @Column(name = "ESPYMES")
+    private Boolean espymes;
+    @Size(max = 60)
+    @Column(name = "MOTIVOEXCLUSIONENVIOESTRUCTURA", length = 60)
+    private String motivoexclusionenvioestructura;
+
+    @Column(name = "SECUENCIALTRANSACCION")
+    private Long secuencialtransaccion;
+
+    @Column(name = "RENOVACIONFIANZA")
+    private Boolean renovacionfianza;
+
+    @Size(max = 1)
+    @Column(name = "REEMPLAZO", length = 1)
+    private String reemplazo;
+
+    @Size(max = 1)
+    @Column(name = "DEBITOFIRMADO", length = 1)
+    private String debitofirmado;
+
+    @Size(max = 1)
+    @Column(name = "POLIZAFIRMA", length = 1)
+    private String polizafirma;
+
+    @Size(max = 16)
+    @Column(name = "USUARIOVISADO", length = 16)
+    private String usuariovisado;
+
+    @Column(name = "FECHAVISADO")
+    private Timestamp fechavisado;
+
+    @Size(max = 16)
+    @Column(name = "TRAYECTOASEGURADOID", length = 16)
+    private String trayectoaseguradoid;
+
+    @Size(max = 16)
+    @Column(name = "ESRENOVACION", length = 16)
+    private String esrenovacion;
+
+    @Size(max = 16)
+    @Column(name = "AUTORIZAPAGO100ID", length = 16)
+    private String autorizapago100id;
+
+    @Size(max = 16)
+    @Column(name = "ESTADOIDORIGINALPOLIZA", length = 16)
+    private String estadoidoriginalpoliza;
+
+    @Column(name = "FECHACAMBIOESTADOPOLIZA")
+    private Timestamp fechacambioestadopoliza;
+
+    @Size(max = 16)
+    @Column(name = "USUARIOCAMBIOESTADOPOLIZA", length = 16)
+    private String usuariocambioestadopoliza;
+
+    @Size(max = 16)
+    @Column(name = "ESTANOTIFICADOCAMBIOESTADOPOL", length = 16)
+    private String estanotificadocambioestadopol;
+
+    @Column(name = "FECHAENTREGADEBITOFIRMADO")
+    private Timestamp fechaentregadebitofirmado;
+
+    @Size(max = 50)
+    @Column(name = "NUMEROFACTURAREFERENCIA", length = 50)
+    private String numerofacturareferencia;
+
+    @Size(max = 10)
+    @Column(name = "SECUENCIALVISADO", length = 10)
+    private String secuencialvisado;
+
+    @Size(max = 20)
+    @Column(name = "ESTADOPOLIZAELECTRONICA", length = 20)
+    private String estadopolizaelectronica;
+
+    @Column(name = "PRODUCTOPYMESID")
+    private Long productopymesid;
+
+    @Size(max = 1)
+    @Column(name = "ESPOLIZAPRIMERRIESGO", length = 1)
+    private String espolizaprimerriesgo;
+
+    @Column(name = "VALORPOLIZAPRIMERRIESGO", precision = 19, scale = 4)
+    private BigDecimal valorpolizaprimerriesgo;
+
+    @Column(name = "ESUAA")
+    private Boolean esuaa;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CONCESIONARIOID")
+    private Concesionario concesionarioid;
+
+    @Column(name = "VALORPOLIZARIESGOMULTIPLE", precision = 19, scale = 4)
+    private BigDecimal valorpolizariesgomultiple;
+
+    @Column(name = "ESPOLIZARIESGOMULTIPLE")
+    private Boolean espolizariesgomultiple;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ConjuntoCoberturas.class)
+    @JoinColumn(name = "CONFIGPRODUCTOID", insertable = false, updatable = false)
+    private ConjuntoCoberturas conjuntoCoberturas;
+
 
     @PrePersist
     public void prePersist() {

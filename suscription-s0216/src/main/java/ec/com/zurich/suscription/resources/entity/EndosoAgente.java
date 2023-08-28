@@ -43,6 +43,10 @@ public class EndosoAgente {
     @Column(name = "ACUERDOID")
     private String acuerdoId;
 
+    @ManyToOne
+    @JoinColumn(name = "ACUERDOID", insertable = false, updatable = false)
+    private Acuerdo acuerdo;
+
     @Column(name = "AGENTESINCONTRATO")
     private String agenteSinContrato;
 

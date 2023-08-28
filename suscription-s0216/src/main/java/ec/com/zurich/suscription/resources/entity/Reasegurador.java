@@ -2,6 +2,7 @@ package ec.com.zurich.suscription.resources.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +13,8 @@ public class Reasegurador {
 
     @Id
     @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEC_GEN")
+    @GenericGenerator(name = "SEC_GEN", strategy = "ec.com.zurich.suscription.util.CustomSequenceGenerator", parameters = @org.hibernate.annotations.Parameter(name = "sequence_name", value = "GENERADORID"))
     private String id;
 
     @Column(name = "LOCALOEXTRANJERO", columnDefinition = "CHAR(1)", nullable = false)

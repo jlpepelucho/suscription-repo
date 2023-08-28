@@ -39,7 +39,7 @@ public class CasoContable implements Serializable {
     @Column(name = "USUARIOACTUALIZA", length = 16, nullable = false)
     private String usuarioActualiza;
 
-    @Column(name = "ORDENAJUSTE", precision = 22, scale = 0, nullable = false)
+    @Column(name = "ORDENAJUSTE", precision = 22, nullable = false)
     private Long ordenAjuste;
 
     @PrePersist

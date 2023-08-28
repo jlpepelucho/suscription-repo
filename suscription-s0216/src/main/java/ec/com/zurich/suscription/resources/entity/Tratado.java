@@ -1,13 +1,15 @@
 package ec.com.zurich.suscription.resources.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "TRATADO", schema = "SA")
 public class Tratado {

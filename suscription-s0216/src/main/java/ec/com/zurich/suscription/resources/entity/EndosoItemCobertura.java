@@ -42,7 +42,7 @@ public class EndosoItemCobertura {
     private Boolean afectaValorAsegurado;
 
     @Column(name = "ORDEN")
-    private Integer orden;
+    private BigDecimal orden;
 
     @Column(name = "SECCION")
     private String seccion;
@@ -72,7 +72,7 @@ public class EndosoItemCobertura {
     private String coberturaGeneralId;
 
     @Column(name = "ESPRIMAFIJA")
-    private Character esPrimaFija;
+    private Boolean esPrimaFija;
 
     @Column(name = "MODIFICADA")
     private Character modificada;
@@ -87,7 +87,7 @@ public class EndosoItemCobertura {
     private BigDecimal limiteCobertura;
 
     @Column(name = "ESTODORIESGO")
-    private Character esTodoRiesgo;
+    private Boolean esTodoRiesgo;
 
     @Column(name = "PROVEEDORSERVICIOID")
     private String proveedorServicioId;

@@ -2,6 +2,7 @@ package ec.com.zurich.suscription.resources.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -15,6 +16,8 @@ public class DetalleCasoContable implements Serializable {
 
     @Id
     @Column(name = "CASOCONTABLEID", length = 16, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEC_GEN")
+    @GenericGenerator(name = "SEC_GEN", strategy = "ec.com.zurich.suscription.util.CustomSequenceGenerator", parameters = @org.hibernate.annotations.Parameter(name = "sequence_name", value = "GENERADORID"))
     private String casoContableId;
 
     @Id

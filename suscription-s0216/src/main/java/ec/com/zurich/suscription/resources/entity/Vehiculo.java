@@ -28,7 +28,7 @@ public class Vehiculo {
     private String motor;
 
     @Column(name = "TONELAGE", precision = 9, scale = 6)
-    private BigDecimal tonelaje;
+    private BigDecimal tonelage;
 
     @Column(name = "ANIO")
     private Integer anio;
@@ -70,7 +70,7 @@ public class Vehiculo {
     private LocalDate fechaActualiza;
 
     @Column(name = "TIENEAUTOASISTENCIA", precision = 3, scale = 0)
-    private Integer tieneAutoAsistencia;
+    private Boolean tieneAutoAsistencia;
 
     @Column(name = "COLORVEHICULOID", length = 17)
     private String colorVehiculoId;
@@ -116,4 +116,15 @@ public class Vehiculo {
 
     @Column(name = "SUBTIPOVEHICULOID", length = 16)
     private String subtipoVehiculoId;
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name = "ID", referencedColumnName = "ID", insertable = false, updatable = false)
+    private Item item;
+    @Transient
+    private String tipoVehiculo;
+    @Transient
+    private String tipoUso;
+    @Transient
+    private String modelo;
+    @Transient
+    private String marca;
 }

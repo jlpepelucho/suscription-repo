@@ -1,0 +1,349 @@
+2023-08-26 17:01:07,970 [INFO] background-preinit o.h.v.i.u.Version -  - HV000001: Hibernate Validator 8.0.0.Final
+2023-08-26 17:01:08,057 [INFO] main e.c.z.s.ZurichApplication -  - Starting ZurichApplication using Java 17.0.7 with PID 24136 (C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216\target\classes started by Kruger in C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216)
+2023-08-26 17:01:08,058 [DEBUG] main e.c.z.s.ZurichApplication -  - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-08-26 17:01:08,058 [INFO] main e.c.z.s.ZurichApplication -  - The following 1 profile is active: "dev"
+2023-08-26 17:01:08,154 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Fetching config from server at : http://localhost:9991
+2023-08-26 17:01:08,154 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Exception on Url - http://localhost:9991:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:9991/suscription-s0216/dev": Connection refused: no further information. Will be trying the next url if available
+2023-08-26 17:01:08,154 [WARN] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Could not locate PropertySource ([ConfigServerConfigDataResource@67001148 uris = array<String>['http://localhost:9991'], optional = true, profiles = list['dev']]): I/O error on GET request for "http://localhost:9991/suscription-s0216/dev": Connection refused: no further information
+2023-08-26 17:01:09,827 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-26 17:01:10,297 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Finished Spring Data repository scanning in 459 ms. Found 62 JPA repository interfaces.
+2023-08-26 17:01:10,584 [INFO] main o.s.c.c.s.GenericScope -  - BeanFactory id=4fb6f53b-9065-3ec4-b980-59a92e7a183b
+2023-08-26 17:01:10,589 [WARN] main o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext -  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'ec.com.zurich.suscription.client.SuscriptionDataClient' defined in null: Could not resolve placeholder 'api.suscription.url' in value "http://${api.suscription.url}"
+2023-08-26 17:01:10,607 [INFO] main o.s.b.a.l.ConditionEvaluationReportLogger -  - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-08-26 17:01:10,629 [ERROR] main o.s.b.SpringApplication -  - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'ec.com.zurich.suscription.client.SuscriptionDataClient' defined in null: Could not resolve placeholder 'api.suscription.url' in value "http://${api.suscription.url}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:230)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:198)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:173)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:358)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:186)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:747)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:565)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at ec.com.zurich.suscription.ZurichApplication.main(ZurichApplication.java:12)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'api.suscription.url' in value "http://${api.suscription.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:293)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:219)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:147)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:85)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:227)
+	... 13 common frames omitted
+2023-08-26 17:03:50,787 [INFO] background-preinit o.h.v.i.u.Version -  - HV000001: Hibernate Validator 8.0.0.Final
+2023-08-26 17:03:50,947 [INFO] main e.c.z.s.ZurichApplication -  - Starting ZurichApplication using Java 17.0.7 with PID 19924 (C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216\target\classes started by Kruger in C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216)
+2023-08-26 17:03:50,951 [DEBUG] main e.c.z.s.ZurichApplication -  - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-08-26 17:03:50,967 [INFO] main e.c.z.s.ZurichApplication -  - The following 1 profile is active: "dev"
+2023-08-26 17:03:51,156 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Fetching config from server at : http://localhost:9991
+2023-08-26 17:03:51,156 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Exception on Url - http://localhost:9991:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:9991/suscription-s0216/dev": Connection refused: no further information. Will be trying the next url if available
+2023-08-26 17:03:51,156 [WARN] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Could not locate PropertySource ([ConfigServerConfigDataResource@73a00e09 uris = array<String>['http://localhost:9991'], optional = true, profiles = list['dev']]): I/O error on GET request for "http://localhost:9991/suscription-s0216/dev": Connection refused: no further information
+2023-08-26 17:03:55,803 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-26 17:03:56,950 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Finished Spring Data repository scanning in 1126 ms. Found 62 JPA repository interfaces.
+2023-08-26 17:03:57,597 [INFO] main o.s.c.c.s.GenericScope -  - BeanFactory id=4fb6f53b-9065-3ec4-b980-59a92e7a183b
+2023-08-26 17:03:57,867 [INFO] main o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -  - Bean 'ec.com.zurich.suscription.client.CreationClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-26 17:03:57,872 [INFO] main o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -  - Bean 'ec.com.zurich.suscription.client.SuscriptionDataClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-26 17:03:58,789 [WARN] main o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext -  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2023-08-26 17:03:58,830 [INFO] main o.s.b.a.l.ConditionEvaluationReportLogger -  - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-08-26 17:03:58,863 [ERROR] main o.s.b.d.LoggingFailureAnalysisReporter -  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles dev are currently active).
+
+2023-08-26 17:06:26,180 [INFO] background-preinit o.h.v.i.u.Version -  - HV000001: Hibernate Validator 8.0.0.Final
+2023-08-26 17:06:26,240 [INFO] main e.c.z.s.ZurichApplication -  - Starting ZurichApplication using Java 17.0.7 with PID 22920 (C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216\target\classes started by Kruger in C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216)
+2023-08-26 17:06:26,240 [DEBUG] main e.c.z.s.ZurichApplication -  - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-08-26 17:06:26,241 [INFO] main e.c.z.s.ZurichApplication -  - No active profile set, falling back to 1 default profile: "default"
+2023-08-26 17:06:26,305 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Fetching config from server at : http://localhost:9991
+2023-08-26 17:06:26,305 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Located environment: name=suscription-data-s0214, profiles=[default], label=null, version=a4734acedd35bec84ccc20fbc69614cdb1d47b94, state=null
+2023-08-26 17:06:27,423 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-26 17:06:27,786 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Finished Spring Data repository scanning in 354 ms. Found 62 JPA repository interfaces.
+2023-08-26 17:06:28,043 [INFO] main o.s.c.c.s.GenericScope -  - BeanFactory id=4fb6f53b-9065-3ec4-b980-59a92e7a183b
+2023-08-26 17:06:28,131 [INFO] main o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -  - Bean 'ec.com.zurich.suscription.client.CreationClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-26 17:06:28,133 [INFO] main o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -  - Bean 'ec.com.zurich.suscription.client.SuscriptionDataClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-26 17:06:28,580 [INFO] main c.z.h.HikariDataSource -  - HikariPool-1 - Starting...
+2023-08-26 17:06:28,584 [WARN] main c.z.h.u.DriverDataSource -  - Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-08-26 17:06:29,294 [INFO] main c.z.h.p.HikariPool -  - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@41f7c02d
+2023-08-26 17:06:29,296 [INFO] main c.z.h.HikariDataSource -  - HikariPool-1 - Start completed.
+2023-08-26 17:06:29,350 [INFO] main o.h.j.i.u.LogHelper -  - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-26 17:06:29,429 [INFO] main o.h.Version -  - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-08-26 17:06:29,934 [INFO] main SQL dialect -  - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2023-08-26 17:06:30,648 [WARN] main o.h.b.i.InFlightMetadataCollectorImpl -  - HHH000069: Duplicate generator name SEC_GEN
+2023-08-26 17:06:30,652 [WARN] main o.h.b.i.InFlightMetadataCollectorImpl -  - HHH000069: Duplicate generator name SEC_GEN
+2023-08-26 17:06:30,730 [WARN] main o.h.b.i.InFlightMetadataCollectorImpl -  - HHH000069: Duplicate generator name SEC_GEN
+2023-08-26 17:06:30,732 [WARN] main o.h.b.i.InFlightMetadataCollectorImpl -  - HHH000069: Duplicate generator name SEC_GEN
+2023-08-26 17:06:31,459 [ERROR] main o.s.o.j.LocalContainerEntityManagerFactoryBean -  - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not instantiate id generator [entity-name=ec.com.zurich.suscription.resources.entity.SecuencialLog]
+2023-08-26 17:06:31,460 [WARN] main o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext -  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not instantiate id generator [entity-name=ec.com.zurich.suscription.resources.entity.SecuencialLog]
+2023-08-26 17:06:31,460 [INFO] main c.z.h.HikariDataSource -  - HikariPool-1 - Shutdown initiated...
+2023-08-26 17:06:31,630 [INFO] main c.z.h.HikariDataSource -  - HikariPool-1 - Shutdown completed.
+2023-08-26 17:06:31,683 [INFO] main o.s.b.a.l.ConditionEvaluationReportLogger -  - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-08-26 17:06:31,712 [ERROR] main o.s.b.SpringApplication -  - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not instantiate id generator [entity-name=ec.com.zurich.suscription.resources.entity.SecuencialLog]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1132)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at ec.com.zurich.suscription.ZurichApplication.main(ZurichApplication.java:12)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not instantiate id generator [entity-name=ec.com.zurich.suscription.resources.entity.SecuencialLog]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 16 common frames omitted
+Caused by: org.hibernate.MappingException: Could not instantiate id generator [entity-name=ec.com.zurich.suscription.resources.entity.SecuencialLog]
+	at org.hibernate.id.factory.internal.StandardIdentifierGeneratorFactory.createIdentifierGenerator(StandardIdentifierGeneratorFactory.java:222)
+	at org.hibernate.mapping.SimpleValue.createIdentifierGenerator(SimpleValue.java:515)
+	at org.hibernate.mapping.SimpleValue.createIdentifierGenerator(SimpleValue.java:372)
+	at org.hibernate.internal.SessionFactoryImpl.lambda$new$1(SessionFactoryImpl.java:293)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(HashMap.java:1779)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:292)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1423)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 20 common frames omitted
+Caused by: org.hibernate.MappingException: Could not interpret id generator strategy [ec.com.zurich.billing.cancellation.util.CustomSequenceGenerator]
+	at org.hibernate.id.factory.internal.StandardIdentifierGeneratorFactory.getIdentifierGeneratorClass(StandardIdentifierGeneratorFactory.java:253)
+	at org.hibernate.id.factory.internal.StandardIdentifierGeneratorFactory.createIdentifierGenerator(StandardIdentifierGeneratorFactory.java:200)
+	... 38 common frames omitted
+2023-08-26 17:23:53,965 [INFO] background-preinit o.h.v.i.u.Version -  - HV000001: Hibernate Validator 8.0.0.Final
+2023-08-26 17:23:54,025 [INFO] main e.c.z.s.ZurichApplication -  - Starting ZurichApplication using Java 17.0.7 with PID 9660 (C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216\target\classes started by Kruger in C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216)
+2023-08-26 17:23:54,025 [DEBUG] main e.c.z.s.ZurichApplication -  - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-08-26 17:23:54,026 [INFO] main e.c.z.s.ZurichApplication -  - No active profile set, falling back to 1 default profile: "default"
+2023-08-26 17:23:54,084 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Fetching config from server at : http://localhost:9991
+2023-08-26 17:23:54,084 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Located environment: name=suscription-data-s0214, profiles=[default], label=null, version=a4734acedd35bec84ccc20fbc69614cdb1d47b94, state=null
+2023-08-26 17:23:55,287 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-26 17:23:55,700 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Finished Spring Data repository scanning in 403 ms. Found 62 JPA repository interfaces.
+2023-08-26 17:23:55,974 [INFO] main o.s.c.c.s.GenericScope -  - BeanFactory id=4fb6f53b-9065-3ec4-b980-59a92e7a183b
+2023-08-26 17:23:56,067 [INFO] main o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -  - Bean 'ec.com.zurich.suscription.client.CreationClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-26 17:23:56,069 [INFO] main o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -  - Bean 'ec.com.zurich.suscription.client.SuscriptionDataClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-26 17:23:56,594 [INFO] main c.z.h.HikariDataSource -  - HikariPool-1 - Starting...
+2023-08-26 17:23:56,602 [WARN] main c.z.h.u.DriverDataSource -  - Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-08-26 17:23:57,417 [INFO] main c.z.h.p.HikariPool -  - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@2ae2fa13
+2023-08-26 17:23:57,419 [INFO] main c.z.h.HikariDataSource -  - HikariPool-1 - Start completed.
+2023-08-26 17:23:57,464 [INFO] main o.h.j.i.u.LogHelper -  - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-26 17:23:57,527 [INFO] main o.h.Version -  - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-08-26 17:23:58,012 [INFO] main SQL dialect -  - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2023-08-26 17:23:58,653 [INFO] main o.h.e.t.j.p.i.JtaPlatformInitiator -  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-26 17:23:58,668 [INFO] main o.s.o.j.LocalContainerEntityManagerFactoryBean -  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-26 17:23:58,678 [WARN] main o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext -  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoController': Lookup method resolution failed
+2023-08-26 17:23:58,679 [INFO] main o.s.o.j.LocalContainerEntityManagerFactoryBean -  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-26 17:23:58,684 [INFO] main c.z.h.HikariDataSource -  - HikariPool-1 - Shutdown initiated...
+2023-08-26 17:23:58,841 [INFO] main c.z.h.HikariDataSource -  - HikariPool-1 - Shutdown completed.
+2023-08-26 17:23:58,881 [INFO] main o.s.b.a.l.ConditionEvaluationReportLogger -  - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-08-26 17:23:58,925 [ERROR] main o.s.b.SpringApplication -  - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:471)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1291)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1186)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:917)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at ec.com.zurich.suscription.ZurichApplication.main(ZurichApplication.java:12)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [ec.com.zurich.suscription.controller.DemoController] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:449)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: ec/com/zurich/suscription/resources/model/DemoRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: ec.com.zurich.suscription.resources.model.DemoRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 25 common frames omitted
+2023-08-26 17:27:10,902 [INFO] background-preinit o.h.v.i.u.Version -  - HV000001: Hibernate Validator 8.0.0.Final
+2023-08-26 17:27:11,070 [INFO] main e.c.z.s.ZurichApplication -  - Starting ZurichApplication using Java 17.0.7 with PID 9744 (C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216\target\classes started by Kruger in C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216)
+2023-08-26 17:27:11,071 [DEBUG] main e.c.z.s.ZurichApplication -  - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-08-26 17:27:11,072 [INFO] main e.c.z.s.ZurichApplication -  - No active profile set, falling back to 1 default profile: "default"
+2023-08-26 17:27:11,423 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Fetching config from server at : http://localhost:9991
+2023-08-26 17:27:11,424 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Located environment: name=suscription-data-s0214, profiles=[default], label=null, version=a4734acedd35bec84ccc20fbc69614cdb1d47b94, state=null
+2023-08-26 17:27:17,708 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-26 17:27:18,338 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Finished Spring Data repository scanning in 612 ms. Found 62 JPA repository interfaces.
+2023-08-26 17:27:18,681 [INFO] main o.s.c.c.s.GenericScope -  - BeanFactory id=36321d24-231c-3b3f-80ce-ca2b1efcbe63
+2023-08-26 17:27:18,687 [WARN] main o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext -  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'ec.com.zurich.suscription.client.EntityClient' defined in null: Could not resolve placeholder 'api.entity.url' in value "http://${api.entity.url}"
+2023-08-26 17:27:18,707 [INFO] main o.s.b.a.l.ConditionEvaluationReportLogger -  - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-08-26 17:27:18,734 [ERROR] main o.s.b.SpringApplication -  - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'ec.com.zurich.suscription.client.EntityClient' defined in null: Could not resolve placeholder 'api.entity.url' in value "http://${api.entity.url}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:230)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:198)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:173)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:358)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:186)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:747)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:565)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at ec.com.zurich.suscription.ZurichApplication.main(ZurichApplication.java:12)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'api.entity.url' in value "http://${api.entity.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:293)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:219)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:147)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:85)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:227)
+	... 13 common frames omitted
+2023-08-26 17:32:51,106 [INFO] background-preinit o.h.v.i.u.Version -  - HV000001: Hibernate Validator 8.0.0.Final
+2023-08-26 17:32:51,167 [INFO] main e.c.z.s.ZurichApplication -  - Starting ZurichApplication using Java 17.0.7 with PID 15724 (C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216\target\classes started by Kruger in C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216)
+2023-08-26 17:32:51,168 [DEBUG] main e.c.z.s.ZurichApplication -  - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-08-26 17:32:51,169 [INFO] main e.c.z.s.ZurichApplication -  - No active profile set, falling back to 1 default profile: "default"
+2023-08-26 17:32:51,226 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Fetching config from server at : http://localhost:9991
+2023-08-26 17:32:51,226 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Located environment: name=suscription-data-s0214, profiles=[default], label=null, version=a4734acedd35bec84ccc20fbc69614cdb1d47b94, state=null
+2023-08-26 17:32:51,519 [WARN] main o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext -  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [ec.com.zurich.suscription.ZurichApplication]
+2023-08-26 17:32:51,523 [INFO] main o.s.b.a.l.ConditionEvaluationReportLogger -  - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-08-26 17:32:51,546 [ERROR] main o.s.b.SpringApplication -  - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [ec.com.zurich.suscription.ZurichApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:178)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:398)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:283)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:344)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:115)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:747)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:565)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at ec.com.zurich.suscription.ZurichApplication.main(ZurichApplication.java:12)
+Caused by: java.io.FileNotFoundException: class path resource [ec/com/zurich/suscription/service/DemoDbService.class] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:211)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:54)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:48)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:86)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:73)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81)
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:610)
+	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getInterfaces(ConfigurationClassParser.java:936)
+	at org.springframework.context.annotation.ConfigurationClassParser.processInterfaces(ConfigurationClassParser.java:379)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:325)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:243)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:188)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:297)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:243)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:164)
+	... 13 common frames omitted
+2023-08-26 17:52:24,647 [INFO] background-preinit o.h.v.i.u.Version -  - HV000001: Hibernate Validator 8.0.0.Final
+2023-08-26 17:52:24,765 [INFO] main e.c.z.s.ZurichApplication -  - Starting ZurichApplication using Java 17.0.7 with PID 23784 (C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216\target\classes started by Kruger in C:\Users\Kruger\Documents\Zurich\ProyectoInterno\suscription-repo\suscription-s0216)
+2023-08-26 17:52:24,765 [DEBUG] main e.c.z.s.ZurichApplication -  - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-08-26 17:52:24,767 [INFO] main e.c.z.s.ZurichApplication -  - No active profile set, falling back to 1 default profile: "default"
+2023-08-26 17:52:24,884 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Fetching config from server at : http://localhost:9991
+2023-08-26 17:52:24,884 [INFO] main o.s.c.c.c.ConfigServerConfigDataLoader -  - Located environment: name=suscription-data-s0214, profiles=[default], label=null, version=a4734acedd35bec84ccc20fbc69614cdb1d47b94, state=null
+2023-08-26 17:52:27,570 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-26 17:52:29,441 [INFO] main o.s.d.r.c.RepositoryConfigurationDelegate -  - Finished Spring Data repository scanning in 1836 ms. Found 62 JPA repository interfaces.
+2023-08-26 17:52:32,169 [INFO] main o.s.c.c.s.GenericScope -  - BeanFactory id=36321d24-231c-3b3f-80ce-ca2b1efcbe63
+2023-08-26 17:52:32,177 [WARN] main o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext -  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'ec.com.zurich.suscription.client.EntityClient' defined in null: Could not resolve placeholder 'api.entity.url' in value "http://${api.entity.url}"
+2023-08-26 17:52:32,250 [INFO] main o.s.b.a.l.ConditionEvaluationReportLogger -  - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-08-26 17:52:32,362 [ERROR] main o.s.b.SpringApplication -  - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'ec.com.zurich.suscription.client.EntityClient' defined in null: Could not resolve placeholder 'api.entity.url' in value "http://${api.entity.url}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:230)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:198)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:173)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:358)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:186)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:747)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:565)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at ec.com.zurich.suscription.ZurichApplication.main(ZurichApplication.java:12)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'api.entity.url' in value "http://${api.entity.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:293)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:219)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:147)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:85)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:227)
+	... 13 common frames omitted

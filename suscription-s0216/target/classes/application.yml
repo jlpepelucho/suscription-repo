@@ -1,0 +1,76 @@
+#spring:
+#  application:
+#    name:  suscription-s0216
+#  profiles:
+#    active: ${PROFILE:dev}
+#  config:
+#    import: "optional:configserver:http://${CONFIG_SERVER:localhost:9991}"
+
+#info:
+#  project:
+#    version: "1.0.0-SNAPSHOT"
+#    title: "suscription-s0216"
+#    description: "Manages creation of policy process for suscription"
+
+
+spring:
+  config:
+    import: "optional:configserver:http://${CONFIG_SERVER:localhost:9991}"
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    password: qb3d88t35$des
+    url: jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.119.138.13)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = colaixe)))
+    username: sa
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 5
+  webflux:
+    base-path: /zurich/api/suscription/data
+  application:
+    name: suscription-data-s0214
+
+server:
+  port: 9010
+
+info:
+  project:
+    version: "1.0.0-SNAPSHOT"
+    title: "suscription-s0216"
+    description: "Manages creation of policy process for suscription"
+
+springdoc:
+  api-docs:
+    path: /swagger-doc/v3/api-docs
+    groups:
+      enabled: true
+  swagger-ui:
+    path: /swagger-doc/swagger-ui.html
+
+app:
+  error:
+    details: 0
+  zurich:
+    message:
+      code:
+        #Mensajes generales
+        '000': OK
+        '001': Error no identificado, contacte con el administrador
+        '002': Ning\u00fa resultado para mostrar
+        '003': Servicio no habilitado
+        '004': Petici\u000f3n incorrecta
+        '005': Trazabilidad no configurada
+        '006': Error al consumir el servicio %s
+        '007': Operacion no permitida
+        '008': Duplicate Registry
+        #Mensajes para contable
+        '100': C\u00f3digo contable no encontrado
+        #Items messages
+        '200': Endorsement existing item
+
+api:
+  billing:
+    creation:
+      url: http://localhost:9012/zurich/api/billing/creation
+  suscription:
+    data:
+      url: http://localhost:9010/zurich/api/suscription/data

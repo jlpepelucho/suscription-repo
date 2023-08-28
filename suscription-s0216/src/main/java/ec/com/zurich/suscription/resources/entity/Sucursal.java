@@ -1,14 +1,16 @@
 package ec.com.zurich.suscription.resources.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
-@Data
 @Table(name = "SUCURSAL", schema = "SA")
 public class Sucursal {
 

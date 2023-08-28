@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -39,7 +40,7 @@ public class EndosoEstado {
     private String usuarioActualiza;
 
     @Column(name = "ORDEN")
-    private Integer orden;
+    private BigDecimal orden;
 
     @Column(name = "SISTEMA")
     private String sistema;
